@@ -1,0 +1,33 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <br>
+
+    <h1 class="text-center"> PORTFOLIO HOME PAGE </h1>
+    <div class="containers">
+        <img src="{% static 'portfolio/ghost.jpeg' %}" alt="" class="text-center main-image">
+    </div>
+
+    <h1 class="text-center"> <b>Sahan's</b> Portfolio</h1>
+
+    <h1 class="text-center">THE HEAD OF THE ENGINEER  </h1>
+
+  <div class="row ">
+    {% for project in projects %}
+
+            <div class="card col-lg-4" style="width: 18rem; height: auto" >
+                <img style="max-height: 350px" src="{{ project.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+                </div>
+            </div>
+
+    {% endfor %}
+      </div>
+
+
+{% endblock %}
+
